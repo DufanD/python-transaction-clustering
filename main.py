@@ -28,6 +28,10 @@ new_data = pd.DataFrame({
     'cluster': new_cluster[:],
 })
 
+grouped_new_data = new_data.groupby('cluster')
+for item in grouped_new_data:
+    print(item)
+
 plt.figure('Transaction Data Clustering with K-Means')
 plt.scatter(new_data['x'].values,
             new_data['y'].values,
